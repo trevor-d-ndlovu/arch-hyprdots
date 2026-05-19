@@ -1,6 +1,6 @@
 # arch-hyprdots
 
-Arch Linux Hyprland dotfiles.
+My Arch Linux Hyprland dotfiles. :)
 
 ## License
 
