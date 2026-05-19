@@ -12,7 +12,7 @@ start_log_output() {
 
   (
     local log_lines=20
-    local max_line_width=$((LOGO_WIDTH - 4))
+    local max_line_width=80
 
     while true; do
       # Read the last N lines into an array
