@@ -1,4 +1,3 @@
-echo "Copy Hyprdots logo to ~/.config/hyprdots/branding/screensaver.txt so screensaver can be personalized"
+echo "Ensure branding directory exists"
 
 mkdir -p ~/.config/hyprdots/branding
-cp $HYPRDOTS_PATH/logo.txt ~/.config/hyprdots/branding/screensaver.txt

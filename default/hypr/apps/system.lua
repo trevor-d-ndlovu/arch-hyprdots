@@ -4,9 +4,6 @@ o.window("(org.hyprdots.bluetui|org.hyprdots.impala|org.hyprdots.wiremix|org.hyp
 o.window({ class = "(xdg-desktop-portal-gtk|sublime_text|DesktopEditors|org.gnome.Nautilus)", title = "^(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to [open|save].*|[C|c]hoose.*)" }, { tag = "+floating-window" })
 o.window("org.gnome.Calculator", { float = true })
 
--- Screen saver should always cover the screen and not be tiled.
-o.window("org.hyprdots.screensaver", { fullscreen = true, float = true, animation = "slide" })
-
 -- Media/image/video apps should be opaque.
 o.window("^(zoom|vlc|mpv|org.kde.kdenlive|com.obsproject.Studio|com.github.PintaProject.Pinta|imv|org.gnome.NautilusPreviewer)$", { tag = "-default-opacity", opacity = "1 1" })
 

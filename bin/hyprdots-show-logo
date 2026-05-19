@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# hyprdots:summary=Display the Hyprdots logo in the terminal using green color.
+# hyprdots:summary=Display the arch-hyprdots branding (placeholder)
 
-clear
-echo -e "\033[32m"
-cat <~/.local/share/hyprdots/logo.txt
-echo -e "\033[0m"
-echo
+echo "arch-hyprdots"
