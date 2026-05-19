@@ -13,7 +13,7 @@ description: >
 
 # Hyprdots Skill
 
-Manage [Hyprdots](https://hyprdots.org/) Linux systems - a beautiful, modern, opinionated Arch Linux distribution with Hyprland.
+Manage [arch-hyprdots](https://github.com/trevor-d-ndlovu/arch-hyprdots) dotfiles - Arch Linux with Hyprland.
 
 This skill is for end-user customization on installed systems.
 It is not for contributing to Hyprdots source code.

@@ -14,7 +14,7 @@ if [[ -z $HYPRDOTS_UPDATE_LOGGED ]]; then
   exec env HYPRDOTS_UPDATE_LOGGED=1 script -qefc "$script_command" "/tmp/hyprdots-update.log"
 fi
 
-trap 'echo ""; echo -e "\033[0;31mSomething went wrong during the update!\n\nPlease review the output above carefully, correct the error, and retry the update.\n\nIf you need assistance, get help from the community at https://hyprdots.org/discord\033[0m"' ERR
+trap 'echo ""; echo -e "\033[0;31mSomething went wrong during the update!\n\nPlease review the output above carefully, correct the error, and retry the update.\n\nIf you need assistance, open an issue at https://github.com/trevor-d-ndlovu/arch-hyprdots/issues\033[0m"' ERR
 
 if [[ $1 == "-y" ]] || hyprdots-update-confirm; then
   hyprdots-snapshot create || (($? == 127))

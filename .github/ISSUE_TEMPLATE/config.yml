@@ -4,5 +4,5 @@ contact_links:
     url: https://github.com/trevor-d-ndlovu/arch-hyprdots/discussions/categories/suggestions
     about: Suggest a new feature, change to existing feature, or other ideas in Discussions.
   - name: Support
-    url: https://hyprdots.org/discord
-    about: Need help? Join our Discord community for support with any issues. GitHub issues should be used for verified bugs only.
+    url: https://github.com/trevor-d-ndlovu/arch-hyprdots/discussions
+    about: Need help? Start a Discussion for support with any issues. GitHub issues should be used for verified bugs only.
