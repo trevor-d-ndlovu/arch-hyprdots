@@ -3,5 +3,5 @@ if [[ -n ${HYPRDOTS_ONLINE_INSTALL:-} ]]; then
   hyprdots-pkg-add base-devel git
 
   # Refresh repos
-  sudo pacman -Syyu --noconfirm
+  sudo pacman -Syyu --overwrite='*' --noconfirm
 fi

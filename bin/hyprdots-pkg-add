@@ -23,7 +23,7 @@ done
 
 # Install pacman packages
 if ((${#pacman_pkgs[@]} > 0)); then
-  sudo pacman -S --noconfirm --needed "${pacman_pkgs[@]}" || exit 1
+  sudo pacman -S --noconfirm --needed --overwrite='*' "${pacman_pkgs[@]}" || exit 1
 fi
 
 # Install AUR packages via yay
