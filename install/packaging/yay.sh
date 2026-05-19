@@ -1,20 +1,10 @@
-# Install yay AUR helper
+# Install yay AUR helper from pre-built binary
 if ! command -v yay &>/dev/null; then
-  echo "Installing yay from AUR..."
-
-  # Cache sudo credentials and set up temporary passwordless sudo for makepkg
-  sudo -v
-  echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/99-hyprdots-yay > /dev/null
-
+  echo "Installing yay from pre-built binary..."
   cd /tmp
-  git clone https://aur.archlinux.org/yay.git
-  cd yay
-  makepkg -si --noconfirm --needed
-  cd /
-  rm -rf /tmp/yay
-
-  # Remove temporary passwordless sudo
-  sudo rm -f /etc/sudoers.d/99-hyprdots-yay
-
+  curl -fsSL -o yay.tar.gz https://github.com/Jguer/yay/releases/download/v12.5.7/yay_12.5.7_x86_64.tar.gz
+  tar xzf yay.tar.gz
+  sudo cp yay_12.5.7_x86_64/yay /usr/local/bin/
+  rm -rf yay.tar.gz yay_12.5.7_x86_64
   echo "yay installed successfully"
 fi
