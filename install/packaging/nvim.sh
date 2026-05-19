@@ -1,2 +1,2 @@
-# Includes lazyvim and the themes
-hyprdots-nvim-setup
+# Install neovim (lazyvim and themes configured by user)
+hyprdots-pkg-add nvim

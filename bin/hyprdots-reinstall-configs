@@ -21,4 +21,4 @@ $(bash $HYPRDOTS_PATH/install/config/theme.sh)
 
 hyprdots-refresh-limine
 hyprdots-refresh-plymouth
-hyprdots-nvim-setup
+echo "Note: Neovim config not included in arch-hyprdots"

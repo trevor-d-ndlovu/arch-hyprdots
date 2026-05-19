@@ -1,3 +1,4 @@
+run_logged $HYPRDOTS_INSTALL/packaging/yay.sh
 run_logged $HYPRDOTS_INSTALL/packaging/base.sh
 run_logged $HYPRDOTS_INSTALL/packaging/fonts.sh
 run_logged $HYPRDOTS_INSTALL/packaging/nvim.sh

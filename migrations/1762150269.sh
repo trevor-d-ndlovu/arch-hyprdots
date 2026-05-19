@@ -1,2 +1,1 @@
-echo "Install hyprdots-walker meta package"
-hyprdots-pkg-add hyprdots-walker
+echo "Walker launcher - standard walker package used in arch-hyprdots"

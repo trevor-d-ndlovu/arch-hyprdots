@@ -18,6 +18,5 @@ echo "Add nfs support by default to Nautilus"
 hyprdots-pkg-add gvfs-nfs
 
 if [[ ! -d $HOME/.config/nvim ]]; then
-  echo "Add missing nvim config"
-  hyprdots-nvim-setup
+  echo "No nvim config found - install one manually if desired"
 fi
