@@ -28,7 +28,7 @@ fi
 
 # Must have secure boot disabled
 if bootctl status 2>/dev/null | grep -q 'Secure Boot: enabled'; then
-  abort "Secure Boot disabled"
+  abort "Secure Boot must be disabled in firmware settings"
 fi
 
 # Must not have Gnome or KDE already install

@@ -1,3 +1,8 @@
 # Set the default GDK_SCALE from what the monitor is currently reporting
+# The monitors config is in Lua format — the scale value is in a variable assignment.
 
-sed -i -E "s|^([[:space:]]*env[[:space:]]*=[[:space:]]*GDK_SCALE,).*|\\1$(hyprdots-hyprland-monitor-scale)|" ~/.config/hypr/monitors.conf
+MONITORS_LUA="$HOME/.config/hypr/monitors.lua"
+if [[ -f $MONITORS_LUA ]]; then
+  SCALE=$(hyprdots-hyprland-monitor-scale 2>/dev/null || echo 1)
+  sed -i -E "s/^(local hyprdots_gdk_scale = ).*/\1$SCALE/" "$MONITORS_LUA"
+fi

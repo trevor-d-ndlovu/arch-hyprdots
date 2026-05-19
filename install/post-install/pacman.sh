@@ -1,6 +1,6 @@
 # Configure pacman
-sudo cp -f ~/.local/share/hyprdots/default/pacman/pacman-${HYPRDOTS_MIRROR:-stable}.conf /etc/pacman.conf
-sudo cp -f ~/.local/share/hyprdots/default/pacman/mirrorlist-${HYPRDOTS_MIRROR:-stable} /etc/pacman.d/mirrorlist
+sudo cp -f "$HYPRDOTS_PATH/default/pacman/pacman-${HYPRDOTS_MIRROR:-stable}.conf" /etc/pacman.conf
+sudo cp -f "$HYPRDOTS_PATH/default/pacman/mirrorlist-${HYPRDOTS_MIRROR:-stable}" /etc/pacman.d/mirrorlist
 
 if lspci -nn | grep -q "106b:180[12]"; then
   cat <<EOF | sudo tee -a /etc/pacman.conf >/dev/null

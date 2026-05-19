@@ -24,7 +24,7 @@ if sudo test -f /etc/sudoers.d/99-hyprdots-installer; then
 fi
 
 # Exit gracefully if user chooses not to reboot
-if gum confirm --padding "0 0 0 32" --show-help=false --default --affirmative "Reboot Now" --negative "" ""; then
+if gum confirm --padding "0 0 0 32" --show-help=false --affirmative "Reboot Now" --negative "Later"; then
   # Clear screen to hide any shutdown messages
   clear
 

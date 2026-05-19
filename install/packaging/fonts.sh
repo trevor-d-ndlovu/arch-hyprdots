@@ -1,4 +1,4 @@
 # Hyprdots logo in a font for Waybar use
-mkdir -p ~/.local/share/fonts
-cp ~/.local/share/hyprdots/config/hyprdots.ttf ~/.local/share/fonts/
-fc-cache
+mkdir -p "$HOME/.local/share/fonts"
+cp "$HYPRDOTS_PATH/config/hyprdots.ttf" "$HOME/.local/share/fonts/"
+fc-cache 2>/dev/null || true

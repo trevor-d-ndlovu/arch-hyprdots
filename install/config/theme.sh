@@ -1,9 +1,5 @@
-# Set links for Nautilus action icons
-sudo ln -snf /usr/share/icons/Adwaita/symbolic/actions/go-previous-symbolic.svg /usr/share/icons/Yaru/scalable/actions/go-previous-symbolic.svg
-sudo ln -snf /usr/share/icons/Adwaita/symbolic/actions/go-next-symbolic.svg /usr/share/icons/Yaru/scalable/actions/go-next-symbolic.svg
-
 # Setup user theme folder
-mkdir -p ~/.config/hyprdots/themes
+mkdir -p "$HOME/.config/hyprdots/themes"
 
 # Chromium policy directory for theme
 sudo mkdir -p /etc/chromium/policies/managed
@@ -11,14 +7,14 @@ sudo chmod a+rw /etc/chromium/policies/managed
 
 # Set initial theme
 hyprdots-theme-set "Tokyo Night"
-rm -rf ~/.config/chromium/SingletonLock # otherwise archiso will own the chromium singleton
+rm -rf "$HOME/.config/chromium/SingletonLock" # otherwise archiso will own the chromium singleton
 
 # Set specific app links for current theme
-mkdir -p ~/.config/btop/themes
-ln -snf ~/.config/hyprdots/current/theme/btop.theme ~/.config/btop/themes/current.theme
+mkdir -p "$HOME/.config/btop/themes"
+ln -snf "$HOME/.config/hyprdots/current/theme/btop.theme" "$HOME/.config/btop/themes/current.theme"
 
-mkdir -p ~/.config/mako
-ln -snf ~/.config/hyprdots/current/theme/mako.ini ~/.config/mako/config
+mkdir -p "$HOME/.config/mako"
+ln -snf "$HOME/.config/hyprdots/current/theme/mako.ini" "$HOME/.config/mako/config"
 
 # Default Chromium to follow system appearance ("device") instead of dark
 echo '{"browser":{"theme":{"color_scheme":0,"color_scheme2":0}}}' | sudo tee /usr/lib/chromium/initial_preferences >/dev/null

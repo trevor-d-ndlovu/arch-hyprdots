@@ -1,6 +1,7 @@
 # Ensure we have gum available
 if ! command -v gum &>/dev/null; then
-  hyprdots-pkg-add gum
+  echo "Installing gum..."
+  sudo pacman -S --noconfirm --needed gum
 fi
 
 # Get terminal size from /dev/tty (works in all scenarios: direct, sourced, or piped)

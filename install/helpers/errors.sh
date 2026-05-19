@@ -106,7 +106,7 @@ catch_errors() {
 
     case "$choice" in
     "Retry installation")
-      bash ~/.local/share/hyprdots/install.sh
+      bash "$HYPRDOTS_PATH/install.sh"
       break
       ;;
     "View full log")
