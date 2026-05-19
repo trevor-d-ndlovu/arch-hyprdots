@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Set install mode to online since boot.sh is used for curl/git installations
+export HYPRDOTS_ONLINE_INSTALL=true
+
 echo "==> arch-hyprdots dotfiles installer"
 echo ""
 

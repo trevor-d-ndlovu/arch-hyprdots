@@ -1,2 +1,2 @@
 # Install neovim (lazyvim and themes configured by user)
-hyprdots-pkg-add nvim
+hyprdots-pkg-add neovim
