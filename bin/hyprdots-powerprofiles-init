@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# hyprdots:summary=Set the correct power profile on boot based on current AC/battery state.
+
+if hyprdots-battery-present && ! hyprdots-ac-present; then
+  hyprdots-powerprofiles-set battery
+else
+  hyprdots-powerprofiles-set ac
+fi

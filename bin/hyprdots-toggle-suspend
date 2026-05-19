@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# hyprdots:summary=Toggle suspend availability in the system menu
+
+hyprdots-toggle \
+  --enabled-notification "󰒲   Suspend removed from system menu" \
+  --disabled-notification "󰒲   Suspend now available in system menu" \
+  suspend-off

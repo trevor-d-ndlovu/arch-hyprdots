@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# hyprdots:summary=Print the installed Hyprdots version
+
+cat $HYPRDOTS_PATH/version

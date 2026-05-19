@@ -1,0 +1,11 @@
+# Changes require a restart to take effect.
+
+# Ensure Hyprdots bins are in the path
+export HYPRDOTS_PATH=$HOME/.local/share/hyprdots
+export PATH=$HYPRDOTS_PATH/bin:$PATH:$HOME/.local/bin
+
+# Set default terminal and editor
+source ~/.config/uwsm/default
+
+# Activate mise if present on the system
+hyprdots-cmd-present mise && eval "$(mise activate bash --shims)"

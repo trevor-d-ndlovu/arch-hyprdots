@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# hyprdots:summary=Reload btop configuration (used by the Hyprdots theme switching).
+
+pkill -SIGUSR2 btop

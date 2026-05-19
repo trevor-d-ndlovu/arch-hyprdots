@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# hyprdots:summary=Launch a floating terminal with the Hyprdots presentation wrapper
+# hyprdots:args=<command>
+
+cmd="$*"
+exec setsid uwsm-app -- xdg-terminal-exec --app-id=org.hyprdots.terminal --title=Hyprdots -e bash -c "hyprdots-show-logo; $cmd; if (( \$? != 130 )); then hyprdots-show-done; fi"

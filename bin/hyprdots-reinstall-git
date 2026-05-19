@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# hyprdots:summary=Reinstall the stable Hyprdots source directory from git
+
+set -e
+
+# Reinstall the Hyprdots configuration directory from the git source.
+
+git clone --depth=1 --branch master "https://github.com/trevor-d-ndlovu/arch-hyprdots.git" ~/.local/share/hyprdots-new >/dev/null
+mv $HYPRDOTS_PATH ~/.local/share/hyprdots-old
+mv ~/.local/share/hyprdots-new $HYPRDOTS_PATH

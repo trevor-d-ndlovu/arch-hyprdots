@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# hyprdots:summary=Refresh the SDDM theme from default
+# hyprdots:requires-sudo=true
+
+sudo rm -rf /usr/share/sddm/themes/hyprdots
+sudo cp -r $HYPRDOTS_PATH/default/sddm/hyprdots /usr/share/sddm/themes/hyprdots

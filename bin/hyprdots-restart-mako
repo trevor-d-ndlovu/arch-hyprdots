@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# hyprdots:summary=Reload mako configuration (used by the Hyprdots theme switching).
+
+makoctl reload

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# hyprdots:summary=Install Zed Editor and configure it with the current Hyprdots theme
+
+echo "Installing Zed Editor..."
+hyprdots-pkg-add zed omazed
+
+# Apply Hyprdots theme to Zed
+omazed setup
+
+setsid gtk-launch dev.zed.Zed

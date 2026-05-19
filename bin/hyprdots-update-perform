@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# hyprdots:summary=Run the full Hyprdots update pipeline
+# hyprdots:requires-sudo=true
+
+set -e
+
+# Ensure screensaver/sleep doesn't set in during updates
+hyprctl dispatch 'hl.dsp.window.tag({ tag = "+noidle" })' &>/dev/null || hyprctl dispatch tagwindow +noidle &>/dev/null || true
+
+# Perform all update steps
+hyprdots-update-keyring
+hyprdots-update-available-reset
+hyprdots-update-system-pkgs
+hyprdots-migrate
+hyprdots-update-aur-pkgs
+hyprdots-update-orphan-pkgs
+hyprdots-hook post-update
+
+hyprdots-update-analyze-logs
+
+hyprdots-update-restart
+
+# Re-enable screensaver/sleep after updates
+hyprctl dispatch 'hl.dsp.window.tag({ tag = "-noidle" })' &>/dev/null || hyprctl dispatch tagwindow -- -noidle &>/dev/null || true

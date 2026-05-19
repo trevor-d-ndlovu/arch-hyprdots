@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# hyprdots:summary=Show the current weather notification
+
+hyprdots-notification-send -g $(hyprdots-weather-icon) -u low "$(hyprdots-weather-status)"

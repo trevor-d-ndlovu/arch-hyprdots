@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# hyprdots:summary=Finish the installation of Hyprdots with items that can only be done after logging in.
+# hyprdots:requires-sudo=true
+
+set -e
+
+FIRST_RUN_MODE=~/.local/state/hyprdots/first-run.mode
+
+if [[ -f $FIRST_RUN_MODE ]]; then
+  rm -f "$FIRST_RUN_MODE"
+
+  bash "$HYPRDOTS_PATH/install/first-run/battery-monitor.sh"
+  bash "$HYPRDOTS_PATH/install/first-run/recover-internal-monitor.sh"
+  bash "$HYPRDOTS_PATH/install/first-run/cleanup-reboot-sudoers.sh"
+  bash "$HYPRDOTS_PATH/install/first-run/firewall.sh"
+  bash "$HYPRDOTS_PATH/install/first-run/dns-resolver.sh"
+  bash "$HYPRDOTS_PATH/install/first-run/gnome-theme.sh"
+  bash "$HYPRDOTS_PATH/install/first-run/gdk-scale.sh"
+  bash "$HYPRDOTS_PATH/install/first-run/swayosd.sh"
+  bash "$HYPRDOTS_PATH/install/first-run/gtk-primary-paste.sh"
+  bash "$HYPRDOTS_PATH/install/first-run/elephant.sh"
+  hyprdots-hook-install post-update "$HYPRDOTS_PATH/install/first-run/install-voxtype.hook"
+  sudo rm -f /etc/sudoers.d/first-run
+
+  bash "$HYPRDOTS_PATH/install/first-run/welcome.sh"
+  bash "$HYPRDOTS_PATH/install/first-run/wifi.sh"
+fi

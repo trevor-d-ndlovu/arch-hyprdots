@@ -1,0 +1,6 @@
+source ~/.local/share/hyprdots/default/bash/envs
+source ~/.local/share/hyprdots/default/bash/shell
+source ~/.local/share/hyprdots/default/bash/aliases
+source ~/.local/share/hyprdots/default/bash/functions
+source ~/.local/share/hyprdots/default/bash/init
+[[ $- == *i* ]] && bind -f ~/.local/share/hyprdots/default/bash/inputrc

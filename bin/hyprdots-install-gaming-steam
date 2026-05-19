@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# hyprdots:summary=Install Steam and graphics drivers selected for this system
+# hyprdots:requires-sudo=true
+
+set -e
+
+echo "Installing Steam..."
+hyprdots-pkg-add steam
+hyprdots-install-gaming-gpu-lib32
+
+echo ""
+echo "Steam will start automatically now. This might take a while..."
+
+setsid gtk-launch steam >/dev/null 2>&1 &

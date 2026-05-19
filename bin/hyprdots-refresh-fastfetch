@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# hyprdots:summary=Overwrite the user config for fastfetch with the Hyprdots default.
+
+hyprdots-refresh-config fastfetch/config.jsonc

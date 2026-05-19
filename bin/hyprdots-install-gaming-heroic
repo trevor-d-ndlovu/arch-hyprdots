@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# hyprdots:summary=Install Heroic Games Launcher (Epic, GOG, Amazon Prime Gaming) with graphics drivers.
+# hyprdots:requires-sudo=true
+
+set -e
+
+echo "Installing Heroic Games Launcher..."
+hyprdots-pkg-add heroic-games-launcher-bin
+hyprdots-install-gaming-gpu-lib32
+
+setsid gtk-launch heroic >/dev/null 2>&1 &

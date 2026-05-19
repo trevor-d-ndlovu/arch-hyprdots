@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# hyprdots:summary=Remove the Xbox Cloud Gaming web app.
+
+set -e
+
+hyprdots-webapp-remove "Xbox Cloud Gaming"

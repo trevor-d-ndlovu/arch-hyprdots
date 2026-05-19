@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# hyprdots:summary=Edit, set, or reset screensaver branding
+# hyprdots:group=branding
+# hyprdots:name=screensaver
+# hyprdots:args=<image|text|reset>
+# hyprdots:examples=hyprdots branding screensaver image | hyprdots branding screensaver text | hyprdots branding screensaver reset
+
+set -euo pipefail
+
+SOURCE_DIR="${XDG_PICTURES_DIR:-$HOME/Pictures}"
+
+case "${1:-}" in
+image)
+  image=$(hyprdots-menu-file "Pick png/svg from $SOURCE_DIR" "${SOURCE_DIR}" "svg png")
+  if [[ -n $image ]] && hyprdots-transcode-ascii "$image" ~/.config/hyprdots/branding/screensaver.txt; then
+    hyprdots-launch-screensaver force >/dev/null 2>&1
+  fi
+  ;;
+text)
+  hyprdots-launch-editor ~/.config/hyprdots/branding/screensaver.txt >/dev/null 2>&1 && hyprdots-launch-screensaver force >/dev/null 2>&1
+  ;;
+reset)
+  cp "$HYPRDOTS_PATH/logo.txt" ~/.config/hyprdots/branding/screensaver.txt && hyprdots-launch-screensaver force >/dev/null 2>&1
+  ;;
+*)
+  echo "Usage: hyprdots-branding-screensaver <image|text|reset>" >&2
+  exit 1
+  ;;
+esac

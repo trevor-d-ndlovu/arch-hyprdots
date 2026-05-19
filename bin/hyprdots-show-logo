@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# hyprdots:summary=Display the Hyprdots logo in the terminal using green color.
+
+clear
+echo -e "\033[32m"
+cat <~/.local/share/hyprdots/logo.txt
+echo -e "\033[0m"
+echo

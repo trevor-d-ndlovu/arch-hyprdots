@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# hyprdots:summary=Check if a Hyprland toggle is currently disabled (missing).
+# hyprdots:args=<flag-name>
+
+[[ ! -f "$HOME/.local/state/hyprdots/toggles/hypr/$1.lua" ]]

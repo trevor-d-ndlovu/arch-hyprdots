@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# hyprdots:summary=Reload hyprland configuration (used by the Hyprdots theme switching).
+
+hyprctl reload >/dev/null

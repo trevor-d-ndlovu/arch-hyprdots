@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# hyprdots:summary=Overwrite the user config for the Plymouth drive decryption and boot sequence with the Hyprdots default and rebuild it.
+# hyprdots:requires-sudo=true
+
+sudo cp -r ~/.local/share/hyprdots/default/plymouth/* /usr/share/plymouth/themes/hyprdots/
+sudo plymouth-set-default-theme hyprdots
+
+if command -v limine-mkinitcpio &>/dev/null; then
+  sudo limine-mkinitcpio
+else
+  sudo mkinitcpio -P
+fi

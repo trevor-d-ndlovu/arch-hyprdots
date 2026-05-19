@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# hyprdots:summary=Enable, disable, toggle, or recover the internal laptop display
+# hyprdots:args=<on|off|toggle|recover>
+
+TOGGLE="internal-monitor-disable"
+TOGGLE_FLAG="$HOME/.local/state/hyprdots/toggles/hypr/$TOGGLE.lua"
+MIRROR_TOGGLE="internal-monitor-mirror"
+
+# Get internal monitor name dynamically
+INTERNAL=$(hyprctl monitors -j | jq -r '.[] | select(.name | contains("eDP")).name' | head -n 1)
+
+on() {
+  if hyprdots-hyprland-toggle-enabled $TOGGLE; then
+    hyprdots-hyprland-toggle $TOGGLE off
+    hyprdots-notification-send -g 󰍹 "Laptop display enabled"
+  fi
+}
+
+off() {
+  if ! hyprdots-hw-external-monitors; then
+    hyprdots-notification-send -g 󰍹 "Can't disable the only active display"
+    exit 1
+  fi
+
+  if hyprdots-hyprland-toggle-disabled $TOGGLE && hyprdots-hyprland-toggle-disabled $MIRROR_TOGGLE; then
+    printf 'hl.monitor({ output = "%s", disabled = true })\n' "$INTERNAL" >"$TOGGLE_FLAG"
+    hyprdots-notification-send -g 󰍹 "Laptop display disabled"
+    hyprctl reload
+  fi
+}
+
+recover() {
+  if ! hyprdots-hw-external-monitors && hyprdots-hyprland-toggle-enabled $TOGGLE; then
+    hyprdots-hyprland-toggle $TOGGLE off
+  fi
+}
+
+toggle() {
+  if hyprdots-hyprland-toggle-enabled $TOGGLE; then
+    on
+  else
+    off
+  fi
+}
+
+case "$1" in
+  on) on ;;
+  off) off ;;
+  toggle) toggle ;;
+  recover) recover ;;
+  *)
+    echo "Usage: $(basename "$0") {on|off|toggle|recover}" >&2
+    exit 1
+    ;;
+esac

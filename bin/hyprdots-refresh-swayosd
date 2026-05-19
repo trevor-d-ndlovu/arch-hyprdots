@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# hyprdots:summary=Overwrite the user configs for swayosd (controls on-screen feedback for changing volume/songs etc) with the Hyprdots defaults and restart the service.
+
+hyprdots-refresh-config swayosd/config.toml
+hyprdots-refresh-config swayosd/style.css
+hyprdots-restart-swayosd

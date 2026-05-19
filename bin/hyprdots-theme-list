@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# hyprdots:summary=List available themes
+# hyprdots:examples=hyprdots theme list | hyprdots theme set "Tokyo Night"
+
+{
+  find ~/.config/hyprdots/themes/ -mindepth 1 -maxdepth 1 \( -type d -o -type l \) -printf '%f\n'
+  find "$HYPRDOTS_PATH/themes/" -mindepth 1 -maxdepth 1 -type d -printf '%f\n'
+} | sort -u | while read -r name; do
+  echo "$name" | sed -E 's/(^|-)([a-z])/\1\u\2/g; s/-/ /g'
+done

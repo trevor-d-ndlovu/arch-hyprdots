@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# hyprdots:summary=Overwrite all the user Hyprland Lua configs in ~/.config/hypr with the Hyprdots defaults.
+
+hyprdots-refresh-config hypr/.luarc.json
+hyprdots-refresh-config hypr/autostart.lua
+hyprdots-refresh-config hypr/bindings.lua
+hyprdots-refresh-config hypr/input.lua
+hyprdots-refresh-config hypr/looknfeel.lua
+hyprdots-refresh-config hypr/hyprland.lua
+hyprdots-refresh-config hypr/monitors.lua
+bash "$HYPRDOTS_PATH/install/config/hyprdots-toggles.sh"
+bash "$HYPRDOTS_PATH/install/config/detect-keyboard-layout.sh"

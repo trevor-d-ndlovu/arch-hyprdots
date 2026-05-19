@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# hyprdots:summary=Show the current battery status notification
+
+hyprdots-notification-send -g 󰁹 -u low "$(hyprdots-battery-status)"

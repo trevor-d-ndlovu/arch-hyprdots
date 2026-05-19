@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# hyprdots:summary=Apply the current theme keyboard color to supported keyboards
+# hyprdots:hidden=true
+
+hyprdots-theme-set-keyboard-asus-rog
+hyprdots-theme-set-keyboard-f16

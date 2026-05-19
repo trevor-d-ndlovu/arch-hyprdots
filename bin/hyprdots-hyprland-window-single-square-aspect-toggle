@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# hyprdots:summary=Toggle single-window square aspect ratio.
+
+case $(hyprdots-hyprland-toggle single-window-aspect-ratio) in
+  on) hyprdots-notification-send -g  "Enable single-window square aspect ratio" ;;
+  off) hyprdots-notification-send -g  "Disable single-window square aspect ratio" ;;
+esac

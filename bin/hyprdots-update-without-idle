@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# hyprdots:summary=No-op now that hyprdots-update-perform is responsible for idle management.
+# hyprdots:hidden=true

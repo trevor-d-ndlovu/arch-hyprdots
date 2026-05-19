@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# hyprdots:summary=Launch a TUI or focus an existing terminal window for it
+# hyprdots:args=<command> [args...]
+
+APP_ID="org.hyprdots.$(basename "$1")"
+LAUNCH_COMMAND="hyprdots-launch-tui $@"
+
+exec hyprdots-launch-or-focus "$APP_ID" "$LAUNCH_COMMAND"

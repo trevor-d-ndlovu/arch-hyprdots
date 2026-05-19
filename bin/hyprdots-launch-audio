@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# hyprdots:summary=Launch the Hyprdots audio controls TUI (provided by wiremix).
+
+hyprdots-launch-or-focus-tui wiremix

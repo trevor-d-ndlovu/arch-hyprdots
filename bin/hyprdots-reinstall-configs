@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# hyprdots:summary=Reset all Hyprdots user configs to the defaults
+# hyprdots:requires-sudo=true
+
+set -e
+
+# Overwrite all user configs with the Hyprdots defaults.
+
+if (( EUID == 0 )); then
+  echo "Error: This script should not be run as root"
+  exit 1
+fi
+
+echo "Resetting all Hyprdots configs"
+cp -R ~/.local/share/hyprdots/config/* ~/.config/
+cp ~/.local/share/hyprdots/default/bashrc ~/.bashrc
+echo '[[ -f ~/.bashrc ]] && . ~/.bashrc' | tee ~/.bash_profile >/dev/null
+
+$(bash $HYPRDOTS_PATH/install/config/theme.sh)
+
+hyprdots-refresh-limine
+hyprdots-refresh-plymouth
+hyprdots-nvim-setup

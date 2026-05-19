@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# hyprdots:summary=Overwrite the user config for hyprlock with the Hyprdots default.
+
+hyprdots-refresh-config hypr/hyprlock.conf

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# hyprdots:summary=Print the current Hyprdots git branch
+
+echo $(git -C "$HYPRDOTS_PATH" rev-parse --abbrev-ref HEAD)

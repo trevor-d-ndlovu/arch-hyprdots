@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# hyprdots:summary=Toggle screensaver availability
+
+hyprdots-toggle \
+  --enabled-notification "󱄄   Screensaver disabled" \
+  --disabled-notification "󱄄   Screensaver enabled" \
+  screensaver-off

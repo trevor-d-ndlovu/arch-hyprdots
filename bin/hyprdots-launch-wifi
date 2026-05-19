@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# hyprdots:summary=Launch the Hyprdots wifi controls (provided by the Impala TUI).
+
+rfkill unblock wifi
+hyprdots-launch-or-focus-tui impala

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# hyprdots:summary=Set Hyprland, Hyprlock, Mako, and Walker corners to sharp or round
+# hyprdots:args=<sharp|round>
+# hyprdots:examples=hyprdots style corners round | hyprdots style corners sharp
+
+if [[ $1 != "sharp" && $1 != "round" ]]; then
+  echo "Usage: hyprdots-style-corners <sharp|round>"
+  exit 1
+fi
+
+hyprdots-style-corners-hyprland "$1"
+hyprdots-style-corners-hyprlock "$1"
+hyprdots-style-corners-mako "$1"
+hyprdots-style-corners-walker "$1"
+
+case $1 in
+  sharp) hyprdots-notification-send "Sharp corners enabled" -g 󰝣 ;;
+  round) hyprdots-notification-send "Round corners enabled" -g 󰘇 ;;
+esac

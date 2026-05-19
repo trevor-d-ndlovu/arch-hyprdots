@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# hyprdots:summary=Overwrite the user tmux config with the Hyprdots default and reload tmux.
+
+hyprdots-refresh-config tmux/tmux.conf
+hyprdots-restart-tmux

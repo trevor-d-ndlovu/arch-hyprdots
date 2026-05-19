@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# hyprdots:summary=Overwrite the user config for hypridle with the Hyprdots default and restart the service.
+
+hyprdots-refresh-config hypr/hypridle.conf
+hyprdots-restart-hypridle

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# hyprdots:summary=Open the Hyprdots background switcher
+# hyprdots:group=theme
+# hyprdots:name=bg-switcher
+# hyprdots:aliases=hyprdots background
+
+HYPRDOTS_PATH=${HYPRDOTS_PATH:-$HOME/.local/share/hyprdots}
+theme_name=$(cat "$HOME/.config/hyprdots/current/theme.name" 2>/dev/null)
+current_background=$(readlink -f "$HOME/.config/hyprdots/current/background" 2>/dev/null)
+
+hyprdots-menu-images \
+  --selected "$current_background" \
+  "$HOME/.config/hyprdots/current/theme/backgrounds" \
+  "$HOME/.config/hyprdots/backgrounds/$theme_name"

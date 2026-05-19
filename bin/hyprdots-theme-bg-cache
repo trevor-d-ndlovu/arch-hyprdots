@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# hyprdots:summary=Cache background switcher thumbnails for the current theme
+
+theme_name=$(cat "$HOME/.config/hyprdots/current/theme.name" 2>/dev/null)
+
+hyprdots-menu-images \
+  --cache-only \
+  "$HOME/.config/hyprdots/current/theme/backgrounds" \
+  "$HOME/.config/hyprdots/backgrounds/$theme_name"
