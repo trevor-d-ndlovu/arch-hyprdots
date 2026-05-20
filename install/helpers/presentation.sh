@@ -27,6 +27,9 @@ export LOGO_HEIGHT=0
 export PADDING_LEFT=0
 export PADDING_LEFT_SPACES=""
 
+# Minimum rows to reserve for interactive TUI content below the logo
+MIN_CONTENT_ROWS=15
+
 # Tokyo Night theme for gum confirm
 export GUM_CONFIRM_PROMPT_FOREGROUND="6"     # Cyan for prompt
 export GUM_CONFIRM_SELECTED_FOREGROUND="0"   # Black text on selected
@@ -43,4 +46,29 @@ export GUM_CONFIRM_PADDING="$PADDING"
 
 clear_logo() {
   printf "\033[H\033[2J" # Clear screen and move cursor to top-left
+}
+
+show_logo() {
+  local logo_file="${HYPRDOTS_PATH:-$HOME/.local/share/hyprdots}/default/branding/logo.txt"
+  if [[ ! -f $logo_file ]]; then
+    return
+  fi
+
+  local available_height=$(( TERM_HEIGHT - MIN_CONTENT_ROWS ))
+  if (( available_height <= 0 )); then
+    available_height=4
+  fi
+
+  local logo_lines logo_line_count
+  mapfile -t logo_lines < "$logo_file"
+  logo_line_count=${#logo_lines[@]}
+
+  if (( logo_line_count <= available_height )); then
+    gum style --foreground 4 --padding "1 0 0 $PADDING_LEFT" "$(cat "$logo_file")"
+  else
+    local start=$(( logo_line_count - available_height ))
+    local cropped
+    cropped=$(printf "%s\n" "${logo_lines[@]:start:available_height}")
+    gum style --foreground 4 --padding "1 0 0 $PADDING_LEFT" "$cropped"
+  fi
 }

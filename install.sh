@@ -20,6 +20,9 @@ export HYPRDOTS_INSTALL="$HYPRDOTS_PATH/install"
 export HYPRDOTS_INSTALL_LOG_FILE="/var/log/hyprdots-install.log"
 export PATH="$HYPRDOTS_PATH/bin:$PATH"
 
+# Create the log file early so the error trap doesn't fail on missing file
+sudo touch "$HYPRDOTS_INSTALL_LOG_FILE" 2>/dev/null || true
+
 # Install
 source "$HYPRDOTS_INSTALL/helpers/all.sh"
 source "$HYPRDOTS_INSTALL/preflight/all.sh"

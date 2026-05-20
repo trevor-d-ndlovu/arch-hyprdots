@@ -8,6 +8,28 @@
 - Shebangs must use `#!/bin/bash` consistently (never `#!/usr/bin/env bash`)
 - Scripts under `install/` and `migrations/` may be sourced and intentionally omit shebangs
 
+# Status
+- Repo (R2) working: all 123 packages signed, DB with sig verification
+- Custom domain pkgs.trevorndlovu.com configured, working via Cloudflare proxy
+- hyprdots-keyring package created and tested (installs GPG key, populates pacman-key)
+- GPG signing active: SigLevel = Required DatabaseOptional
+- hyprdots-iso repo created at github.com/trevor-d-ndlovu/hyprdots-iso (forked from omarchy-iso)
+- Full install flow tested in Docker: repo sync → keyring → package install → all passing
+
+# What's Left
+- CI pipeline for hyprdots-pkgs auto-build
+- DNS may still need nameserver update at Fasthosts for pkgs.trevorndlovu.com
+
+# Branding Done
+- ASCII art logo created (61x23 chars, based on Hyprdots logo from logo.png)
+- Default branding stored in default/branding/{logo.txt, about.txt, logo.png}
+- about.txt (13 lines) used by fastfetch
+- logo.txt displayed during installer (begin.sh → show_logo)
+- bin/hyprdots-show-logo displays the ASCII art
+- install/config/branding.sh copies default branding to ~/.config/hyprdots/branding/
+- ISO configurator (configs/airootfs/root/configurator) shows logo via show_logo()
+- Legacy oma files cleaned: oma.png removed, wallpapers renamed, URL fixed
+
 # Command Naming
 
 All commands start with `hyprdots-`. Prefixes indicate purpose.

@@ -1,5 +1,17 @@
 #!/bin/bash
 
-# hyprdots:summary=Display the arch-hyprdots branding (placeholder)
+# hyprdots:summary=Display the Hyprdots ASCII art logo
 
-echo "arch-hyprdots"
+LOGO_FILE="${1:-$HOME/.config/hyprdots/branding/logo.txt}"
+
+if [[ -f $LOGO_FILE ]]; then
+  cat "$LOGO_FILE"
+else
+  # Fallback: try the default branding
+  DEFAULT_LOGO="${HYPRDOTS_PATH:-$HOME/.local/share/hyprdots}/default/branding/logo.txt"
+  if [[ -f $DEFAULT_LOGO ]]; then
+    cat "$DEFAULT_LOGO"
+  else
+    echo "Hyprdots"
+  fi
+fi

@@ -24,6 +24,8 @@ cups-pdf
 docker
 docker-buildx
 docker-compose
+elephant
+elephant-all
 dosfstools
 dotnet-runtime-9.0
 dust
