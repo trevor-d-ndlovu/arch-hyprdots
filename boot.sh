@@ -9,6 +9,9 @@ echo ""
 HYPRDOTS_REPO="${HYPRDOTS_REPO:-trevor-d-ndlovu/arch-hyprdots}"
 HYPRDOTS_REF="${HYPRDOTS_REF:-master}"
 
+# Use custom branch if instructed, otherwise default to master
+HYPRDOTS_REF="${HYPRDOTS_REF:-master}"
+
 sudo pacman -Syu --noconfirm --needed git
 
 echo -e "\nCloning arch-hyprdots from: https://github.com/${HYPRDOTS_REPO}.git"
