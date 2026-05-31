@@ -41,7 +41,7 @@
     }
   },
   "custom/hyprdots": {
-    "format": "🖳",
+    "format": "",
     "on-click": "hyprdots-menu",
     "on-click-right": "xdg-terminal-exec",
     "tooltip-format": "Hyprdots Menu\n\nSuper + Alt + Space"
