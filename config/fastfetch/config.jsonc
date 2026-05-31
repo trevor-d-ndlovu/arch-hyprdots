@@ -64,7 +64,7 @@
     },
     {
       "type": "command",
-      "key": "🖳 OS",
+      "key": " OS",
       "keyColor": "blue",
       "text": "version=$(hyprdots-version); echo \"Hyprdots $version\""
     },
